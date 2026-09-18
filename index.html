@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0d6b3f">
+  <title>MH KISAN RATES</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="bg-orb orb1"></div><div class="bg-orb orb2"></div>
+
+<header class="glass nav">
+  <div class="brand">
+    <div class="logo">🌱</div>
+    <div><h1>MH KISAN RATES</h1><p>Daily Mandi Rates • Maharashtra</p></div>
+  </div>
+  <button class="icon-btn" id="refreshBtn" title="Refresh">↻</button>
+</header>
+
+<main>
+  <section class="hero glass">
+    <div>
+      <span class="pill">● LIVE MARKET DASHBOARD</span>
+      <h2>Know your crop price<br><span>before you sell.</span></h2>
+      <p>Check mandi prices, compare markets and follow crop trends from one simple dashboard.</p>
+    </div>
+    <div class="hero-leaf">🌾</div>
+  </section>
+
+  <section class="filters glass">
+    <label>Crop
+      <select id="cropSelect"><option value="">All crops</option></select>
+    </label>
+    <label>Mandi
+      <select id="mandiSelect"><option value="">All mandis</option></select>
+    </label>
+    <label>History
+      <select id="daysSelect">
+        <option value="7">7 days</option><option value="30">30 days</option>
+      </select>
+    </label>
+    <button class="primary" id="searchBtn">Search Rates</button>
+  </section>
+
+  <div id="notice" class="notice glass">Demo data is shown until an official/authorized market-price API is connected.</div>
+
+  <section>
+    <div class="section-title"><h3>Today's Rates</h3><span id="updated">Loading…</span></div>
+    <div id="cards" class="cards"></div>
+  </section>
+
+  <section class="glass chart-box">
+    <div class="section-title"><h3>📈 Price Trend</h3><span>Modal price</span></div>
+    <canvas id="priceChart"></canvas>
+  </section>
+
+  <section class="glass table-box">
+    <div class="section-title"><h3>Market Rates</h3><span id="resultCount"></span></div>
+    <div class="table-wrap">
+      <table><thead><tr><th>Crop</th><th>Mandi</th><th>Min</th><th>Max</th><th>Modal</th><th>Updated</th></tr></thead>
+      <tbody id="tableBody"></tbody></table>
+    </div>
+  </section>
+</main>
+
+<footer>🌱 MH KISAN RATES • Built for Maharashtra farmers</footer>
+<script src="/static/app.js"></script>
+</body>
+</html>
